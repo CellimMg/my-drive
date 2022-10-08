@@ -6,7 +6,10 @@ const authenticationSchema: joi.ObjectSchema<AuthenticationType> = joi.object({
         "string.email": "Formato de e-mail inválido!",
         "base.string": "O e-mail deve ser um texto!"
     }),
-    password: joi.string().required().messages({})
+    password: joi.string().required().messages({
+        "any.required": "Você deve informar um email",
+        "base.string": "O e-mail deve ser um texto!"
+    })
 });
 
 
