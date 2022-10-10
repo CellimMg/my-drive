@@ -8,6 +8,7 @@ async function authenticate(req: Request, res: Response){
         const token = await authenticateUser(credentials);
         return res.status(200).send({token});
     } catch (error) {
+        console.log(error);
         return res.sendStatus(500);
     }
 }
